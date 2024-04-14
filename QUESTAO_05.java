@@ -6,31 +6,35 @@ public class Produto {
     private double preco;
     private int quantidadeEmEstoque;
 
+    
+    public Produto(String nome) {
+        this.nome = nome;
+        this.preco = 0.0;
+        this.quantidadeEmEstoque = 0;
+    }
+
+    
+    public Produto(String nome, double preco) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEmEstoque = 0;
+    }
+
+
     public Produto(String nome, double preco, int quantidadeEmEstoque) {
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public int getQuantidadeEmEstoque() {
-        return quantidadeEmEstoque;
-    }
-
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         
-        Produto produto1 = new Produto("Creme", 24.99, 200);
-        Produto produto2 = new Produto("Perfume", 99.99, 45);
-        Produto produto3 = new Produto("Vestido", 79.99, 50);
+        Produto produto1 = new Produto("Vestido");
+        Produto produto2 = new Produto("Perfume", 100.00);
+        Produto produto3 = new Produto("Bolsa", 124.99, 100);
 
         
         System.out.println("Produto 1:");
@@ -45,9 +49,10 @@ public class Produto {
         scanner.close();
     }
 
+    
     public static void exibirDetalhesProduto(Produto produto) {
-        System.out.println("Nome: " + produto.getNome());
-        System.out.println("Preco: R$" + produto.getPreco());
-        System.out.println("Quantidade em Estoque: " + produto.getQuantidadeEmEstoque());
+        System.out.println("Nome: " + produto.nome);
+        System.out.println("Preco: R$" + produto.preco);
+        System.out.println("Quantidade em Estoque: " + produto.quantidadeEmEstoque);
     }
 }
